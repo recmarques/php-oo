@@ -26,10 +26,10 @@ class ContaBancaria {
         $this->nomeTitular = $nomeTitular;
         $this->numeroAgencia = $numeroAgencia;
         $this->numeroConta = $numeroConta;
-        $this->$saldo = $saldo;
+        $this->saldo = $saldo;
     }
 
-    public function obterSaldo():string
+    public function obterSaldo()
     {
         return 'Saldo atual da conta: R$' . $this->saldo;
     }
@@ -53,21 +53,21 @@ $conta = new ContaBancaria(
     'Renata Castro',
     '838-10',
     '232389-10',
-    300.00
+    500.00
 );
 // quebra de execução de código, nada abaixo disso é executado
 // exit();
 
-// $conta->saldo = 0;
-// var_dump($conta->nomeTitular);
-// var_dump($conta->saldo);
 
 var_dump($conta);
+echo '<br /><br />';
 
 // utilizar echo para mostrar o return nos métodos
 echo $conta->obterSaldo();
+
+echo '<br /><br />';
 echo $conta->depositar(200.00);
+echo '<br /><br />';
 echo $conta->sacar(100.00);
+echo '<br /><br />';
 echo $conta->obterSaldo();
-
-
